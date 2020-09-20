@@ -35,7 +35,7 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
-      - uses: webbertakken/unity-builder@v0.11
+      - uses: webbertakken/unity-builder@v1.2
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
@@ -62,19 +62,19 @@ jobs:
       env:
         CHANNEL: windows-x64
         PACKAGE: Build/StandaloneWindows64
-    - uses: josephbmanley/butler-publish-itchio-action@master
-      env:
-        CHANNEL: osx
-        PACKAGE: Build/StandaloneOSX
-    - uses: josephbmanley/butler-publish-itchio-action@master
-      env:
-        CHANNEL: linux
-        PACKAGE: Build/StandaloneLinux64
+    #- uses: josephbmanley/butler-publish-itchio-action@master
+    #  env:
+    #    CHANNEL: osx
+    #    PACKAGE: Build/StandaloneOSX
+    #- uses: josephbmanley/butler-publish-itchio-action@master
+    #  env:
+    #    CHANNEL: linux
+    #    PACKAGE: Build/StandaloneLinux64
     #- uses: josephbmanley/butler-publish-itchio-action@master
     #  env:
     #    CHANNEL: web
     #    PACKAGE: Build/WebGL
     # Delete the artifact after we upload it to itch.io
-    - uses: geekyeggo/delete-artifact@v1
-      with:
-        name: build
+    #- uses: geekyeggo/delete-artifact@v1
+    #  with:
+    #    name: Build
