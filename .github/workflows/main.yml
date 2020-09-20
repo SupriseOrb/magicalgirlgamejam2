@@ -23,7 +23,7 @@ jobs:
           - StandaloneWindows # Build a Windows standalone.
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
           - StandaloneLinux64  # Build a Linux 64-bit standalone.
-          - WebGL # WebGL
+          #- WebGL # WebGL Not going to do WebGL
     steps:
       - uses: actions/checkout@v2
         with:
@@ -70,10 +70,10 @@ jobs:
       env:
         CHANNEL: linux
         PACKAGE: Build/StandaloneLinux64
-    - uses: josephbmanley/butler-publish-itchio-action@master
-      env:
-        CHANNEL: web
-        PACKAGE: Build/WebGL
+    #- uses: josephbmanley/butler-publish-itchio-action@master
+    #  env:
+    #    CHANNEL: web
+    #    PACKAGE: Build/WebGL
     # Delete the artifact after we upload it to itch.io
     - uses: geekyeggo/delete-artifact@v1
       with:
